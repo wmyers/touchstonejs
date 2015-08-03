@@ -18,10 +18,13 @@ module.exports = React.createClass({
 			value: this.props.value
 		};
 	},
-	updateInputValue: function (event) {
+	updateInputValue: function updateInputValue(event) {
 		this.setState({
 			value: event.target.value
 		});
+
+    //wm-20150720 hook to parent component
+    this.props.onChange(event.target.value);
 	},
 	render: function () {
 		// Set Classes
