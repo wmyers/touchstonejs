@@ -15,12 +15,14 @@ module.exports = React.createClass({
 	},
 	getInitialState: function () {
 		return {
-			value: this.props.value
+			value: this.props.value,
+      selectedOption: this.props.selectedOption
 		};
 	},
 	updateInputValue: function updateInputValue(event) {
 		this.setState({
-			value: event.target.value
+			value: event.target.value,
+      selectedOption: event.target.value
 		});
 
     //wm-20150720 hook to parent component
@@ -35,10 +37,15 @@ module.exports = React.createClass({
 
 		// Map Options
 		var options = this.props.options.map(function (op) {
-			return (
-				<option key={'option-' + op.value} value={op.value}>
-					{op.label}
-				</option>
+			//wm 20150814 reverted to old syntax to implement optional selected parameter
+			var props = { key: 'option-' + op.value, value: op.value };
+      if(op.value === this.state.selectedOption){
+        props.selected = 'selected';
+      }
+			return React.createElement(
+				'option',
+				props,
+				op.label
 			);
 		}.bind(this));
 
