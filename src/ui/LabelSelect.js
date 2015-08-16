@@ -37,14 +37,9 @@ module.exports = React.createClass({
 
 		// Map Options
 		var options = this.props.options.map(function (op) {
-			//wm 20150814 reverted to old syntax to implement optional selected parameter
-			var props = { key: 'option-' + op.value, value: op.value };
-      if(op.value === this.state.selectedOption){
-        props.selected = 'selected';
-      }
 			return React.createElement(
 				'option',
-				props,
+				{ key: 'option-' + op.value, value: op.value },
 				op.label
 			);
 		}.bind(this));
@@ -54,7 +49,7 @@ module.exports = React.createClass({
 				<div className="item-inner">
 					<div className="field-label">{this.props.label}</div>
 					<div className="field-control">
-						<select value={this.state.value} onChange={this.updateInputValue} className="select-field">
+						<select value={this.state.value} onChange={this.updateInputValue} className="select-field" ref="select">
 							{options}
 						</select>
 						<div className="select-field-indicator">
