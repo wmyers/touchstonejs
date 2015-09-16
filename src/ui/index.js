@@ -11,6 +11,7 @@ module.exports = {
 	ItemNote: require('./ItemNote'),
 	Keypad: require('./Keypad'),
 	LabelInput: require('./LabelInput'),
+	LabelLink: require('./LabelLink'),
 	LabelSelect: require('./LabelSelect'),
 	LabelTextarea: require('./LabelTextarea'),
 	LoadingButton: require('./LoadingButton'),
