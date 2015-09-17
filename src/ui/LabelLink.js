@@ -12,7 +12,7 @@ module.exports = React.createClass({
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
 		value: React.PropTypes.string,
-		onClick: React.PropTypes.func
+		onTap: React.PropTypes.func
 	},
 
 	getDefaultProps: function () {
@@ -44,7 +44,7 @@ module.exports = React.createClass({
 					{ className: 'field-control' },
 					React.createElement(
 						Tappable,
-						{ component: this.props.component, onTap: this.props.onClick },
+						{ component: this.props.component, onTap: this.props.onTap },
 						this.props.value
 					)
 				)
