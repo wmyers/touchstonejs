@@ -12,7 +12,8 @@ module.exports = React.createClass({
 		first: React.PropTypes.bool,
 		label: React.PropTypes.string,
 		value: React.PropTypes.string,
-		onTap: React.PropTypes.func
+		onTap: React.PropTypes.func,
+		icon: React.PropTypes.string
 	},
 
 	getDefaultProps: function () {
@@ -27,6 +28,11 @@ module.exports = React.createClass({
 			'is-first': this.props.first,
 			'u-selectable': this.props.disabled
 		});
+
+		var icon = !!this.props.icon ? React.createElement(
+			'span',
+			{ className: this.props.icon, style: {marginLeft:'2'} }
+		) : null;
 
 		return React.createElement(
 			'label',
@@ -45,7 +51,8 @@ module.exports = React.createClass({
 					React.createElement(
 						Tappable,
 						{ component: this.props.component, onTap: this.props.onTap },
-						this.props.value
+						this.props.value,
+						icon
 					)
 				)
 			)
