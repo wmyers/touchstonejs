@@ -69,7 +69,7 @@ module.exports = React.createClass({
 					),
 					React.createElement(
 						Tappable,
-						{component:'span', onTap:this.props.onIconTap},
+						{ className:'select-field-icon', component:'div', onTap:this.props.onIconTap },
 						React.createElement(
 							'span',
 							{className:this.props.icon, style:{marginLeft:'2'}}
