@@ -13,6 +13,7 @@ module.exports = {
 	LabelInput: require('./LabelInput'),
 	LabelLink: require('./LabelLink'),
 	LabelSelect: require('./LabelSelect'),
+	LabelSelectIconLink: require('./LabelSelectIconLink'),
 	LabelTextarea: require('./LabelTextarea'),
 	LoadingButton: require('./LoadingButton'),
 	Popup: require('./Popup'),
